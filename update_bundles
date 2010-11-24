@@ -23,7 +23,6 @@ git_bundles = [
   "git://github.com/mileszs/ack.vim.git",
   "git://github.com/vim-scripts/DirDiff.vim.git",
   "git://github.com/vim-scripts/YankRing.vim.git",
-  "git://github.com/vim-bundles/nerdcommenter.git",
 ]
 
 vim_org_scripts = [

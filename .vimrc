@@ -9,7 +9,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-set nobackup
 
 " Testing "
 set encoding=utf-8
@@ -29,6 +28,7 @@ set laststatus=2
 """""""""""
 
 set nocompatible
+set noswapfile
 set number
 " set relativenumber " (Don't like too much after trying)
 
