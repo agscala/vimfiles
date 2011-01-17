@@ -14,7 +14,6 @@ filetype indent on
 set encoding=utf-8
 set scrolloff=3
 set scrolljump=6
-set autoindent
 set showmode
 set showcmd
 set hidden
@@ -33,7 +32,6 @@ set number
 " set relativenumber " (Don't like too much after trying)
 
 "-- Default Indenting --"
-set autoindent
 set tabstop=4
 set shiftwidth=4
 "---------------"
