@@ -23,6 +23,7 @@ git_bundles = [
   "git://github.com/mileszs/ack.vim.git",
   "git://github.com/vim-scripts/DirDiff.vim.git",
   "git://github.com/vim-scripts/YankRing.vim.git",
+  # "git://github.com/skammer/vim-css-color.git", # SLOW AS BALLS
 ]
 
 vim_org_scripts = [
