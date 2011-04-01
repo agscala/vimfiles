@@ -9,7 +9,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-
 " Testing "
 set encoding=utf-8
 set scrolloff=3
@@ -55,6 +54,7 @@ set gfn=Inconsolata\ Medium\ 11
 set linespace=1
 syntax enable
 
+
 " Highlighting the cursor
 set cursorline 
 set cursorcolumn
@@ -97,6 +97,9 @@ autocmd FileType python map <F5> <Esc>:!python %<CR>
 autocmd FileType perl map <F5> <Esc>:!perl %<CR>
 autocmd FileType ruby map <F5> <Esc>:!ruby %<CR>
 
+" Show trailing whitepace and spaces before a tab:
+autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
+
 " Remove GUI from GVIM
 set guioptions=
 
@@ -132,6 +135,9 @@ let Tlist_Compact_Format = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
+
+""" FSwitch
+map <F5> <Esc>:FSHere<CR>
 
 set completeopt=menuone,longest
 

@@ -263,7 +263,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("NonText", "3D3D3D", "000000", "bold")
     call <SID>X("Question", "00ff7f", "", "")
     call <SID>X("Search", "f5deb3", "cd853f", "")
-    call <SID>X("SpecialKey", "3D3D3D", "", "")
+	call <SID>X("SpecialKey", "3D3D3D", "", "")
     call <SID>X("StatusLine", "c2bfa5", "", "reverse")
     call <SID>X("StatusLineNC", "c2bfa5", "7f7f7f", "reverse")
     call <SID>X("Title", "cd5c5c", "", "")
@@ -276,13 +276,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "Tooltip
 
     " syntax highlighting groups
-    call <SID>X("Comment", "87ceeb", "", "")
-    call <SID>X("Constant", "ffa0a0", "", "")
-    call <SID>X("Identifier", "98fb98", "", "none")
-    call <SID>X("Statement", "f0e68c", "", "bold")
-    call <SID>X("PreProc", "cd5c5c", "", "")
-    call <SID>X("Type", "bdb76b", "", "bold")
-    call <SID>X("Special", "ffdead", "", "")
+	call <SID>X("Comment", "87ceeb", "", "")
+	call <SID>X("Constant", "ffa0a0", "", "")
+	call <SID>X("Identifier", "98fb98", "", "none")
+	call <SID>X("Statement", "f0e68c", "", "bold")
+	call <SID>X("PreProc", "cd5c5c", "", "")
+	call <SID>X("Type", "bdb76b", "", "bold")
+	call <SID>X("Special", "ffdead", "", "")
     "Underlined
     call <SID>X("Ignore", "666666", "", "")
     "Error
