@@ -49,7 +49,9 @@ nnoremap <leader><space> :noh<cr>
 "---------------"
 
 set showmatch
-colors desert256
+" colors desert256
+colorscheme solarized
+
 set gfn=Inconsolata\ Medium\ 11
 set linespace=1
 syntax enable

@@ -27,6 +27,7 @@ git_bundles = [
 	"git://github.com/vim-scripts/python.vim.git",
 	"git://github.com/mexpolk/vim-taglist.git",
 	"git://github.com/bronson/vim-trailing-whitespace.git",
+	"git://github.com/altercation/vim-colors-solarized.git",
 ]
 
 vim_org_scripts = [
