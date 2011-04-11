@@ -240,12 +240,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     endfun
     " }}}
 
-    call <SID>X("Normal", "cccccc", "000000", "")
+    call <SID>X("Normal", "DDDDDD", "222222", "")
 
     " highlight groups
     call <SID>X("Cursor", "708090", "f0e68c", "")
-	call <SID>X("CursorLine", "", "333333", "NONE")
-	call <SID>X("CursorColumn", "", "333333", "NONE")
+	call <SID>X("CursorLine", "", "2C2C2C", "NONE")
+	call <SID>X("CursorColumn", "", "2C2C2C", "NONE")
     "CursorIM
     "Directory
     "DiffAdd
@@ -276,10 +276,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "Tooltip
 
     " syntax highlighting groups
-	call <SID>X("Comment", "87ceeb", "", "")
+	call <SID>X("Comment", "646B6E", "", "")
 	call <SID>X("Constant", "ffa0a0", "", "")
 	call <SID>X("Identifier", "98fb98", "", "none")
-	call <SID>X("Statement", "f0e68c", "", "bold")
+	call <SID>X("Statement", "f0e68c", "", "none")
 	call <SID>X("PreProc", "cd5c5c", "", "")
 	call <SID>X("Type", "bdb76b", "", "bold")
 	call <SID>X("Special", "ffdead", "", "")
