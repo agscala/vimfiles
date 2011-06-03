@@ -23,16 +23,18 @@ git_bundles = [
 	"git://github.com/mileszs/ack.vim.git",
 	"git://github.com/vim-scripts/DirDiff.vim.git",
 	"git://github.com/vim-scripts/YankRing.vim.git",
-	# "git://github.com/skammer/vim-css-color.git", # SLOW AS BALLS
+	"git://github.com/skammer/vim-css-color.git",
 	"git://github.com/vim-scripts/python.vim.git",
 	"git://github.com/mexpolk/vim-taglist.git",
 	"git://github.com/bronson/vim-trailing-whitespace.git",
 	"git://github.com/altercation/vim-colors-solarized.git",
+	"git://github.com/vim-scripts/DoxygenToolkit.vim.git",
+	"git://github.com/vim-scripts/mru.vim.git",
 ]
 
 vim_org_scripts = [
   ["IndexedSearch", "7062",  "plugin"],
-  ["gist",          "12732", "plugin"],
+  # ["gist",          "12732", "plugin"],
   ["jquery",        "12107", "syntax"],
 ]
 

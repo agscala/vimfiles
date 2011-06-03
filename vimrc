@@ -9,6 +9,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" Print out the syntax groups under the cursor for debugging
 map <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 			\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 			\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -62,7 +63,7 @@ syntax enable
 
 
 " Highlighting the cursor
-set cursorline 
+set cursorline
 set cursorcolumn
 set list
 set listchars=tab:»\ ,trail:·
@@ -142,6 +143,16 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 
+""" Doxygen
+let g:DoxygenToolkit_briefTag_pre="@description "
+let g:DoxygenToolkit_paramTag_pre="@param "
+let g:DoxygenToolkit_returnTag="@return"
+let g:DoxygenToolkit_authorName="Andrew Scala"
+
+""" MRU (Most Recently Used
+map <F9> <Esc>:MRU<CR>
+let MRU_Max_Menu_Entries = 20
+
 """ FSwitch
 map <F5> <Esc>:FSHere<CR>
 
@@ -182,3 +193,6 @@ command! -nargs=0 DiffAll call <SID>DiffAllWindows(1)
 command! -nargs=0 DiffAllOff call <SID>DiffAllWindows(0) 
 command! -nargs=* -complete=file DiffThese call <SID>DiffThese(<f-args>) 
 "====== END VIM DIFF ========"
+"
+"
+"
