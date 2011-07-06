@@ -279,7 +279,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Comment", "646B6E", "", "")
 	call <SID>X("Constant", "ffa0a0", "", "")
 	call <SID>X("Identifier", "98fb98", "", "none")
-	call <SID>X("Statement", "f0e68c", "", "none")
+	call <SID>X("Statement", "f0e68c", "", "bold")
 	call <SID>X("PreProc", "cd5c5c", "", "")
 	call <SID>X("Type", "bdb76b", "", "bold")
 	call <SID>X("Special", "ffdead", "", "")

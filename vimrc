@@ -94,6 +94,12 @@ nmap <C-h> <C-w><Left>
 " nmap <M-h> <C-w><
 " nmap <M-l> <C-w>>
 
+" Fix [<section> commands so that it matches both formats of function braces
+map [[ ?{<CR>w99[{
+map ][ /}<CR>b99]}
+map ]] j0[[%/{<CR>
+map [] k$][%?}<CR>
+
 " NERDTree
 imap <F8> <Esc>:NERDTreeToggle<CR>
 nmap <F8> :NERDTreeToggle<CR>
@@ -120,7 +126,9 @@ let NERDCompactSexyComs = 1
 
 """ TagList.vim settings
 let Tlist_Ctags_Cmd="ctags-exuberant"
+let Tlist_Sort_Type="name"
 let Tlist_Process_File_Always=1
+let Tlist_WinWidth=50
 map <F7> <Esc>:TlistToggle<CR>
 map <F6> :!/usr/bin/ctags-exuberant -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
@@ -144,7 +152,7 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 
 """ Doxygen
-let g:DoxygenToolkit_briefTag_pre="@description "
+let g:DoxygenToolkit_briefTag_pre="@details "
 let g:DoxygenToolkit_paramTag_pre="@param "
 let g:DoxygenToolkit_returnTag="@return"
 let g:DoxygenToolkit_authorName="Andrew Scala"
