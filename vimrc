@@ -17,7 +17,7 @@ map <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " Testing "
 set encoding=utf-8
 set scrolloff=3
-set scrolljump=6
+" set scrolljump=6
 set showmode
 set showcmd
 set hidden
