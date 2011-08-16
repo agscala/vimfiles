@@ -184,32 +184,30 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#CompleteCpp
 
 "========= VIM DIFF ========="
-function! s:DiffAllWindows(on) " {{{2 
-    windo call <SID>DiffThisWindow(a:on) 
-endfunc 
- 
-function! s:DiffThisWindow(on) " {{{2 
-    if a:on 
-        silent! set diff scrollbind fdm=diff 
-    else 
-        silent! set nodiff noscrollbind fdm=syntax 
-    end 
-endfunc 
- 
-function! s:DiffThese(file1, file2) " {{{2 
-    exe "tabedit " . a:file1 
-    exe "vsplit " . a:file2 
-    call <SID>DiffAllWindows(1) 
-endfunc 
- 
- 
-command! -nargs=0 DiffThis call <SID>DiffThisWindow(1) 
-command! -nargs=0 DiffOff call <SID>DiffThisWindow(0) 
-command! -nargs=0 DiffToggle call <SID>DiffThisWindow(!&diff) 
-command! -nargs=0 DiffAll call <SID>DiffAllWindows(1) 
-command! -nargs=0 DiffAllOff call <SID>DiffAllWindows(0) 
-command! -nargs=* -complete=file DiffThese call <SID>DiffThese(<f-args>) 
-"====== END VIM DIFF ========"
-"
-"
-"
+function! s:DiffAllWindows(on) " {{{2
+    windo call <SID>DiffThisWindow(a:on)
+endfunc
+
+function! s:DiffThisWindow(on) " {{{2
+    if a:on
+        silent! set diff scrollbind fdm=diff
+    else
+        silent! set nodiff noscrollbind fdm=syntax
+    end
+endfunc
+
+function! s:DiffThese(file1, file2) " {{{2
+    exe "tabedit " . a:file1
+    exe "vsplit " . a:file2
+    call <SID>DiffAllWindows(1)
+endfunc
+
+
+command! -nargs=0 DiffThis call <SID>DiffThisWindow(1)
+command! -nargs=0 DiffOff call <SID>DiffThisWindow(0)
+command! -nargs=0 DiffToggle call <SID>DiffThisWindow(!&diff)
+command! -nargs=0 DiffAll call <SID>DiffAllWindows(1)
+command! -nargs=0 DiffAllOff call <SID>DiffAllWindows(0)
+command! -nargs=* -complete=file DiffThese call <SID>DiffThese(<f-args>)
+"====== END VIM DIFF ========
+
