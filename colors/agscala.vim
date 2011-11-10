@@ -28,7 +28,7 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="desert256"
+let g:colors_name="agscala"
 
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " functions {{{
@@ -288,6 +288,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "Error
     call <SID>X("Todo", "ff4500", "eeee00", "")
 
+	call <SID>X("DiffAdd", "ffffff", "215a08", "")
+	call <SID>X("DiffDelete", "ffffff", "5c1003", "none")
+	call <SID>X("DiffChange", "ffffff", "2651b2", "bold")
+	call <SID>X("DiffText", "ffffff", "17316c", "bold")
+
     " delete functions {{{
     delf <SID>X
     delf <SID>rgb
@@ -323,10 +328,10 @@ else
     hi WildMenu      ctermfg=0 ctermbg=3
     hi Folded        ctermfg=darkgrey ctermbg=NONE
     hi FoldColumn    ctermfg=darkgrey ctermbg=NONE
-    hi DiffAdd       ctermbg=4
-    hi DiffChange    ctermbg=5
-    hi DiffDelete    cterm=bold ctermfg=4 ctermbg=6
-    hi DiffText      cterm=bold ctermbg=1
+    " hi DiffAdd       ctermbg=4
+    " hi DiffChange    ctermbg=5
+    " hi DiffDelete    cterm=bold ctermfg=4 ctermbg=6
+    " hi DiffText      cterm=bold ctermbg=1
     hi Comment       ctermfg=darkcyan
     hi Constant      ctermfg=brown
     hi Special       ctermfg=5

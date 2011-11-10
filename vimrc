@@ -39,6 +39,7 @@ set number
 "-- Default Indenting --"
 set tabstop=4
 set shiftwidth=4
+" set expandtab
 "---------------"
 
 "-- Searching --"
@@ -54,7 +55,8 @@ nnoremap <leader><space> :noh<cr>
 "---------------"
 
 set showmatch
-colors desert256
+colorscheme agscala
+set background=dark
 " colorscheme solarized
 
 set gfn=Inconsolata\ Medium\ 11
@@ -116,14 +118,15 @@ autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 " Remove GUI from GVIM
 set guioptions=
 
-" Go to last file(s) if invoked without arguments.
-autocmd VimLeave * nested if (!isdirectory($HOME . "/.vim")) |
-    \ call mkdir($HOME . "/.vim") |
-    \ endif |
-    \ execute "mksession! " . $HOME . "/.vim/Session.vim"
+" Go to last file(s) if invoked without arguments. (ANNOYING CAUSE IT CHANGES
+" CWD TO THE LAST FILES DIR)
+" autocmd VimLeave * nested if (!isdirectory($HOME . "/.vim")) |
+    " \ call mkdir($HOME . "/.vim") |
+    " \ endif |
+    " \ execute "mksession! " . $HOME . "/.vim/Session.vim"
 
-autocmd VimEnter * nested if argc() == 0 && filereadable($HOME . "/.vim/Session.vim") |
-    \ execute "source " . $HOME . "/.vim/Session.vim"
+" autocmd VimEnter * nested if argc() == 0 && filereadable($HOME . "/.vim/Session.vim") |
+    " \ execute "source " . $HOME . "/.vim/Session.vim"
 
 " AckGrep.vim
 " let g:ackprg="ack-grep -H --nocolor --nogroup "
@@ -134,31 +137,34 @@ let NERDSpaceDelims = 1
 let NERDCompactSexyComs = 1
 
 """ TagList.vim settings
-let Tlist_Ctags_Cmd="ctags-exuberant"
-let Tlist_Sort_Type="name"
-let Tlist_Process_File_Always=1
-let Tlist_WinWidth=50
-map <F7> <Esc>:TlistToggle<CR>
+" let Tlist_Ctags_Cmd="ctags-exuberant"
+" let Tlist_Sort_Type="name"
+" let Tlist_Process_File_Always=1
+" let Tlist_WinWidth=50
+" map <F7> <Esc>:TlistToggle<CR>
 map <F6> :!/usr/bin/ctags-exuberant -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+" " Tags -- add new ones with `ctags -R -f ~/.vim/tags/language.ctags /location/to/tag/from
+" " set tags+=$HOME/.vim/tags/python.ctags
+" " Taglist variables
+" " Display function name in status bar:
+" let g:ctags_statusline=1
+" " Automatically start script
+" let generate_tags=1
+" " Displays taglist results in a vertical window:
+" let Tlist_Use_Horiz_Window=0
+" " Shorter commands to toggle Taglist display
+" nnoremap TT :TlistToggle<CR>
+" " Various Taglist diplay config:
+" let Tlist_Use_Right_Window = 1
+" let Tlist_Compact_Format = 1
+" let Tlist_Exit_OnlyWindow = 1
+" let Tlist_GainFocus_On_ToggleOpen = 1
+" let Tlist_File_Fold_Auto_Close = 1
 
-" Tags -- add new ones with `ctags -R -f ~/.vim/tags/language.ctags /location/to/tag/from
-" set tags+=$HOME/.vim/tags/python.ctags
-" Taglist variables
-" Display function name in status bar:
-let g:ctags_statusline=1
-" Automatically start script
-let generate_tags=1
-" Displays taglist results in a vertical window:
-let Tlist_Use_Horiz_Window=0
-" Shorter commands to toggle Taglist display
-nnoremap TT :TlistToggle<CR>
-" Various Taglist diplay config:
-let Tlist_Use_Right_Window = 1
-let Tlist_Compact_Format = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_File_Fold_Auto_Close = 1
+""" Tagbar.vim
+map <F7> <Esc>:TagbarToggle<CR>
+
 
 """ Doxygen
 let g:DoxygenToolkit_briefTag_pre="@details "
