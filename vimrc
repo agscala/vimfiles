@@ -17,6 +17,8 @@ map <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " Testing "
 set encoding=utf-8
 set scrolloff=3
+set sidescroll=1
+set sidescrolloff=10
 " set scrolljump=6
 set showmode
 set showcmd
@@ -29,6 +31,9 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set noswapfile
+set lazyredraw
+set splitbelow
+set splitright
 """""""""""
 
 set nocompatible
@@ -39,7 +44,9 @@ set number
 "-- Default Indenting --"
 set tabstop=4
 set shiftwidth=4
-" set expandtab
+set softtabstop=4
+set expandtab
+set shiftround
 "---------------"
 
 "-- Searching --"
@@ -53,6 +60,8 @@ set showmatch
 set nohlsearch
 nnoremap <leader><space> :noh<cr>
 "---------------"
+
+
 
 set showmatch
 colorscheme agscala
@@ -69,6 +78,7 @@ set cursorline
 set cursorcolumn
 set list
 set listchars=tab:»\ ,trail:·
+set showbreak=↪
 
 " PHP settings.
 let php_sql_query=1
@@ -86,15 +96,15 @@ nmap [<space> O<Esc>
 nmap ]<space> o<Esc>
 
 " Map ctrl-movement keys to window switching & resizing
-nmap <C-k> <C-w><Up>
-nmap <C-j> <C-w><Down>
-nmap <C-l> <C-w><Right>
-nmap <C-h> <C-w><Left>
+noremap <C-k> <C-w><Up>
+noremap <C-j> <C-w><Down>
+noremap <C-l> <C-w><Right>
+noremap <C-h> <C-w><Left>
 " Resizing windows. (doesn't work)
-" nmap <M-h> <C-w>+
-" nmap <M-j> <C-w>-
-" nmap <M-h> <C-w><
-" nmap <M-l> <C-w>>
+" nmap <C-k> <C-w>+
+" nmap <C-j> <C-w>-
+" nmap <C-h> <C-w><
+" nmap <C-l> <C-w>>
 
 " Fix [<section> commands so that it matches both formats of function braces
 map [[ ?{<CR>w99[{

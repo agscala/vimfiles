@@ -240,7 +240,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     endfun
     " }}}
 
-    call <SID>X("Normal", "CCCCCC", "222222", "")
+    " call <SID>X("Normal", "CCCCCC", "222222", "") "Dark gray background
+    call <SID>X("Normal", "CCCCCC", "", "NONE") " Transparent Background
 
     " highlight groups
     call <SID>X("Cursor", "708090", "f0e68c", "")
@@ -288,10 +289,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "Error
     call <SID>X("Todo", "ff4500", "eeee00", "")
 
-	call <SID>X("DiffAdd", "ffffff", "215a08", "")
-	call <SID>X("DiffDelete", "ffffff", "5c1003", "none")
-	call <SID>X("DiffChange", "ffffff", "2651b2", "bold")
-	call <SID>X("DiffText", "ffffff", "17316c", "bold")
+	call <SID>X("DiffAdd", "ffffff", "215a08", "none")
+	call <SID>X("DiffDelete", "7d1604", "7d1604", "none")
+	call <SID>X("DiffChange", "ffffff", "2651b2", "none")
+	call <SID>X("DiffText", "ffffff", "2651b2", "none")
 
     " delete functions {{{
     delf <SID>X
