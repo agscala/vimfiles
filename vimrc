@@ -45,7 +45,7 @@ set number
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
+" set expandtab
 set shiftround
 "---------------"
 
@@ -71,6 +71,7 @@ set background=dark
 set gfn=Inconsolata\ Medium\ 11
 set linespace=1
 syntax enable
+runtime plugin/RainbowParenthsis.vim
 
 
 " Highlighting the cursor
@@ -78,7 +79,6 @@ set cursorline
 set cursorcolumn
 set list
 set listchars=tab:»\ ,trail:·
-set showbreak=↪
 
 " PHP settings.
 let php_sql_query=1
@@ -172,6 +172,9 @@ map <F6> :!/usr/bin/ctags-exuberant -R --c++-kinds=+p --fields=+iaS --extra=+q .
 " let Tlist_GainFocus_On_ToggleOpen = 1
 " let Tlist_File_Fold_Auto_Close = 1
 
+""" Powerline.vim
+let g:Powerline_symbols = 'fancy'
+
 """ Tagbar.vim
 map <F7> <Esc>:TagbarToggle<CR>
 
@@ -187,7 +190,8 @@ map <F9> <Esc>:MRU<CR>
 let MRU_Max_Menu_Entries = 20
 
 """ FSwitch
-map <F5> <Esc>:FSHere<CR>
+autocmd FileType cpp map <F5> <Esc>:FSHere<CR>
+autocmd FileType c map <F5> <Esc>:FSHere<CR>
 
 set completeopt=menuone,longest
 
@@ -198,6 +202,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#CompleteCpp
+autocmd FileType cpp set omnifunc=omni#cpp#complete#Main
 
 "========= VIM DIFF ========="
 function! s:DiffAllWindows(on) " {{{2
