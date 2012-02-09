@@ -173,7 +173,7 @@ map <F6> :!/usr/bin/ctags-exuberant -R --c++-kinds=+p --fields=+iaS --extra=+q .
 " let Tlist_File_Fold_Auto_Close = 1
 
 """ Powerline.vim
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 
 """ Tagbar.vim
 map <F7> <Esc>:TagbarToggle<CR>
