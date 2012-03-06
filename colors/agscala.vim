@@ -259,7 +259,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("FoldColumn", "d2b48c", "4d4d4d", "")
     call <SID>X("IncSearch", "708090", "f0e68c", "")
 	call <SID>X("LineNr", "FFCC00", "4C004C", "")
-    call <SID>X("ModeMsg", "222222", "222222", "bold") " Hidden in the background because powerline.vim shows this info instead.
+    call <SID>X("ModeMsg", "222222", "FFFFFF", "bold") " Hidden in the background because powerline.vim shows this info instead.
     call <SID>X("MoreMsg", "2e8b57", "", "")
 	call <SID>X("NonText", "3D3D3D", "000000", "bold")
     call <SID>X("Question", "00ff7f", "", "")

@@ -36,6 +36,13 @@ set splitbelow
 set splitright
 """""""""""
 
+" Reselect visual block after indent
+vnoremap < <gv
+vnoremap > >gv
+
+" Shortcut for writing read-only files
+cmap w!! %!sudo tee > /dev/null %
+
 set nocompatible
 set noswapfile
 set number
@@ -61,6 +68,8 @@ set nohlsearch
 nnoremap <leader><space> :noh<cr>
 "---------------"
 
+" Show Git Diff in window split when committing
+autocmd FileType gitcommit DiffGitCached | wincmd p
 
 
 set showmatch
@@ -101,10 +110,10 @@ noremap <C-j> <C-w><Down>
 noremap <C-l> <C-w><Right>
 noremap <C-h> <C-w><Left>
 " Resizing windows. (doesn't work)
-" nmap <C-k> <C-w>+
-" nmap <C-j> <C-w>-
-" nmap <C-h> <C-w><
-" nmap <C-l> <C-w>>
+" noremap <C-S-k> <C-w>+
+" noremap <C-S-j> <C-w>-
+" noremap <C-S-h> <C-w><
+" noremap <C-S-l> <C-w>>
 
 " Fix [<section> commands so that it matches both formats of function braces
 map [[ ?{<CR>w99[{
@@ -152,7 +161,7 @@ let NERDCompactSexyComs = 1
 " let Tlist_Process_File_Always=1
 " let Tlist_WinWidth=50
 " map <F7> <Esc>:TlistToggle<CR>
-map <F6> :!/usr/bin/ctags-exuberant -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+" map <F6> :!/usr/bin/ctags-exuberant -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " " Tags -- add new ones with `ctags -R -f ~/.vim/tags/language.ctags /location/to/tag/from
 " " set tags+=$HOME/.vim/tags/python.ctags
@@ -178,6 +187,9 @@ let g:Powerline_symbols = 'fancy'
 """ Tagbar.vim
 map <F7> <Esc>:TagbarToggle<CR>
 
+""" CommandT.vim
+map <F6> <Esc>:CommandT<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
 
 """ Doxygen
 let g:DoxygenToolkit_briefTag_pre="@details "

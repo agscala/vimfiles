@@ -38,7 +38,8 @@ git_bundles = [
 	"https://github.com/vim-scripts/FuzzyFinder.git",
 	"https://github.com/vim-scripts/L9.git",
 	"https://github.com/Lokaltog/vim-powerline.git",
-    "https://github.com/lunaru/vim-less.git"
+    "https://github.com/lunaru/vim-less.git",
+	"https://github.com/wincent/Command-T.git"
 ]
 
 vim_org_scripts = [
