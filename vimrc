@@ -134,6 +134,9 @@ autocmd FileType ruby map <F5> <Esc>:!ruby %<CR>
 " Show trailing whitepace and spaces before a tab:
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 
+" Shortcut to sudo write a file
+cmap w!! %!sudo tee > /dev/null %
+
 " Remove GUI from GVIM
 set guioptions=
 
