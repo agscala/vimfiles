@@ -37,7 +37,11 @@ git_bundles = [
 	"https://github.com/rupa/v.git",
 	"https://github.com/vim-scripts/FuzzyFinder.git",
 	"https://github.com/vim-scripts/L9.git",
-    "https://github.com/lunaru/vim-less.git"
+    "https://github.com/lunaru/vim-less.git",
+	"https://github.com/digitaltoad/vim-jade.git",
+	"https://github.com/kchmck/vim-coffee-script.git",
+	"https://github.com/MarcWeber/vim-addon-local-vimrc.git",
+	"https://github.com/wavded/vim-stylus",
 ]
 
 vim_org_scripts = [

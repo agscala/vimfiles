@@ -35,12 +35,7 @@ set lazyredraw
 set splitbelow
 set splitright
 """""""""""
-
-set nocompatible
-set noswapfile
-set number
-" set relativenumber " (Don't like too much after trying)
-
+"
 "-- Default Indenting --"
 set tabstop=4
 set shiftwidth=4
@@ -48,6 +43,12 @@ set softtabstop=4
 " set expandtab
 set shiftround
 "---------------"
+
+
+set nocompatible
+set noswapfile
+set number
+" set relativenumber " (Don't like too much after trying)
 
 "-- Searching --"
 nnoremap / /\v
