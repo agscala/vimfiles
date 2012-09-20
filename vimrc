@@ -34,6 +34,7 @@ set noswapfile
 set lazyredraw
 set splitbelow
 set splitright
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 """""""""""
 
 " Reselect visual block after indent
@@ -86,14 +87,20 @@ set background=dark
 set gfn=Inconsolata\ Medium\ 11
 set linespace=1
 syntax enable
-runtime plugin/RainbowParenthsis.vim
-
 
 " Highlighting the cursor
 set cursorline
 set cursorcolumn
 set list
 set listchars=tab:»\ ,trail:·
+
+" Use _ as a word separator.
+" NOTE: If this stops working, watch for FileType after
+" set iskeyword-=_
+
+" autocmd CursorHold * setlocal cursorline cursorcolumn
+" autocmd CursorMoved,InsertEnter *
+    " \ if &l:cursorline | setlocal nocursorline nocursorcolumn | endif
 
 " PHP settings.
 let php_sql_query=1
@@ -207,8 +214,9 @@ let g:DoxygenToolkit_returnTag="@return"
 let g:DoxygenToolkit_authorName="Andrew Scala"
 
 """ MRU (Most Recently Used
-map <F9> <Esc>:MRU<CR>
-let MRU_Max_Menu_Entries = 20
+map <F9> <Esc>:CtrlPMRUFiles<CR>
+" map <F9> <Esc>:MRU<CR>
+" let MRU_Max_Menu_Entries = 20
 
 """ FSwitch
 autocmd FileType cpp map <F5> <Esc>:FSHere<CR>
