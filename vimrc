@@ -171,6 +171,9 @@ let g:ackprg="ack-grep -H"
 let NERDSpaceDelims = 1
 let NERDCompactSexyComs = 1
 
+" EasyMotion.vim settings
+let g:EasyMotion_leader_key = '<Leader>'
+
 """ TagList.vim settings
 " let Tlist_Ctags_Cmd="ctags-exuberant"
 " let Tlist_Sort_Type="name"
@@ -215,6 +218,7 @@ let g:DoxygenToolkit_authorName="Andrew Scala"
 
 """ MRU (Most Recently Used
 map <F9> <Esc>:CtrlPMRUFiles<CR>
+map <C-@> <Esc>:CtrlP<CR>
 " map <F9> <Esc>:MRU<CR>
 " let MRU_Max_Menu_Entries = 20
 

@@ -44,6 +44,8 @@ git_bundles = [
 	# "https://github.com/pix/vim-taglist.git",
     "https://github.com/lunaru/vim-less.git",
     "https://github.com/majutsushi/tagbar.git",
+	"https://github.com/Lokaltog/vim-easymotion.git",
+	"https://github.com/Valloric/YouCompleteMe.git",
 ]
 
 vim_org_scripts = [
