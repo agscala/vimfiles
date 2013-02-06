@@ -1,7 +1,11 @@
 cd ~/.vim
+
+git submodule init
+git submodule update
+
 echo "Updating plug-ins..."
-mkdir -p bundle-autoupdate
-ruby update_bundles
+
+vim +BundleInstall +qall
 
 echo "Installing vimfiles..."
 

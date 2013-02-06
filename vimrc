@@ -1,13 +1,64 @@
-" Pathogen "
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#runtime_append_all_bundles("bundle-autoupdate")
-call pathogen#helptags()
-""""""""""""
+"
+"                        | |
+"  .   , .   . ,---. ,---| |    ,---.
+"   \ /  |   | |   | |   | |    |---'
+"    '   '---' '   ' `---' '--- `---
+"
+" -----------------------------------
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
 
-filetype on
-filetype plugin on
-filetype indent on
+" (required)
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+
+" GITHUB REPOS:
+Bundle 'bronson/vim-trailing-whitespace.git'
+Bundle 'digitaltoad/vim-jade.git'
+Bundle 'kchmck/vim-coffee-script.git'
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'Lokaltog/vim-powerline.git'
+Bundle 'MarcWeber/vim-addon-local-vimrc.git'
+Bundle 'rosstimson/scala-vim-support.git'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'tpope/vim-markdown.git'
+Bundle 'tpope/vim-repeat.git'
+Bundle 'tpope/vim-surround.git'
+Bundle 'tsaleh/vim-align.git'
+Bundle 'tsaleh/vim-matchit.git'
+Bundle 'tsaleh/vim-supertab.git'
+Bundle 'vim-ruby/vim-ruby.git'
+Bundle 'vim-scripts/DirDiff.vim.git'
+Bundle 'vim-scripts/DoxygenToolkit.vim.git'
+Bundle 'vim-scripts/python.vim.git'
+Bundle 'wavded/vim-stylus'
+Bundle 'lunaru/vim-less.git'
+Bundle 'majutsushi/tagbar.git'
+Bundle 'Lokaltog/vim-easymotion.git'
+Bundle 'Valloric/YouCompleteMe.git'
+
+" VIMSCRIPTS REPOS:
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+
+" GIT REPOS:
+" Bundle 'git://git.wincent.com/command-t.git'
+
+
+" (required)
+filetype plugin indent on
+
+" ---------- END VUNDLE -------------
+
 
 " Print out the syntax groups under the cursor for debugging
 map <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
