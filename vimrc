@@ -50,8 +50,7 @@ Bundle 'wavded/vim-stylus'
 " Bundle 'Valloric/YouCompleteMe.git'
 
 " VIMSCRIPTS REPOS:
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
+Bundle 'FSwitch'
 
 " GIT REPOS:
 " Bundle 'git://git.wincent.com/command-t.git'
