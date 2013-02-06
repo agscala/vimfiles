@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/agscala/workspace/neverlost-linux_git/tools/db_poi_resolver_check'
-let g:netrw_dirhist_2='/home/agscala/workspace/neverlost-linux_git/tools/regionID'
-let g:netrw_dirhist_3='/home/agscala/workspace/neverlost-linux_git/source/GeoEngine'
