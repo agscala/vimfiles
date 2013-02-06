@@ -180,7 +180,7 @@ let NERDSpaceDelims = 1
 let NERDCompactSexyComs = 1
 
 " EasyMotion.vim settings
-let g:EasyMotion_leader_key = '<Leader>'
+" let g:EasyMotion_leader_key = '<Leader>'
 
 """ TagList.vim settings
 " let Tlist_Ctags_Cmd="ctags-exuberant"
@@ -217,6 +217,9 @@ map <F7> <Esc>:TagbarToggle<CR>
 """ CommandT.vim
 map <F6> <Esc>:CommandT<CR>
 nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+
+""" Supertab.vim
+let g:SuperTabDefaultCompletionType = "context"
 
 """ Doxygen
 let g:DoxygenToolkit_briefTag_pre="@details "
