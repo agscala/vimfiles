@@ -41,6 +41,14 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 vnoremap < <gv
 vnoremap > >gv
 
+" Don't save deleted text
+vnoremap p "_dP
+
+augroup resCur
+	autocmd!
+	autocmd BufReadPost * call setpos(".", getpos("'\""))
+augroup END
+
 " Shortcut for writing read-only files
 cmap w!! %!sudo tee > /dev/null %
 
