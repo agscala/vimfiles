@@ -24,6 +24,7 @@ Bundle 'gmarik/vundle'
 " GITHUB REPOS:
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'daltoad/vim-jade'
+Bundle 'godlygeek/tabular'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -31,6 +32,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'lunaru/vim-less'
 Bundle 'majutsushi/tagbar'
 Bundle 'MarcWeber/vim-addon-local-vimrc'
+Bundle 'mhinz/vim-startify'
 Bundle 'rosstimson/scala-vim-support'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
@@ -117,6 +119,8 @@ set softtabstop=4
 " set expandtab
 set shiftround
 "---------------"
+"
+let mapleader = ","
 
 
 set nocompatible
@@ -125,8 +129,8 @@ set number
 " set relativenumber " (Don't like too much after trying)
 
 "-- Searching --"
-nnoremap / /\v
-vnoremap / /\v
+" nnoremap / /\v
+" vnoremap / /\v
 set ignorecase
 set smartcase
 " set gdefault "FUCKIN WITH MY SUBSTITUTIN
@@ -272,7 +276,7 @@ map <F6> <Esc>:CommandT<CR>
 nnoremap <silent> <Leader>b :CommandTBuffer<CR>
 
 """ Supertab.vim
-let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabDefaultCompletionType = "context"
 
 """ Doxygen
 let g:DoxygenToolkit_briefTag_pre="@details "
