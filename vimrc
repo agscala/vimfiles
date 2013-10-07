@@ -23,7 +23,6 @@ Bundle 'gmarik/vundle'
 
 " GITHUB REPOS:
 Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'daltoad/vim-jade'
 Bundle 'godlygeek/tabular'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -53,6 +52,8 @@ Bundle 'wavded/vim-stylus'
 
 " VIMSCRIPTS REPOS:
 Bundle 'FSwitch'
+Bundle 'Gist.vim'
+Bundle 'WebAPI.vim'
 
 " GIT REPOS:
 " Bundle 'git://git.wincent.com/command-t.git'
