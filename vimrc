@@ -43,6 +43,7 @@ Bundle 'tsaleh/vim-align'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'tsaleh/vim-supertab'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/csv.vim'
 Bundle 'vim-scripts/DirDiff.vim'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/python.vim'
@@ -146,8 +147,8 @@ autocmd FileType gitcommit DiffGitCached | wincmd p
 
 
 set showmatch
-colorscheme agscala
 set background=dark
+colorscheme agscala
 " colorscheme solarized
 
 set gfn=Inconsolata\ Medium\ 11
@@ -236,6 +237,10 @@ let g:ackprg="ack-grep -H"
 " NERD_Commenter.vim settings
 let NERDSpaceDelims = 1
 let NERDCompactSexyComs = 1
+
+" Startify.vim settings
+let g:startify_change_to_dir = 0
+autocmd FileType startify setlocal buftype=
 
 " EasyMotion.vim settings
 " let g:EasyMotion_leader_key = '<Leader>'

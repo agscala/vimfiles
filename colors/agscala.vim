@@ -264,6 +264,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("NonText", "3D3D3D", "000000", "bold")
     call <SID>X("Question", "00ff7f", "", "")
     call <SID>X("Search", "f5deb3", "cd853f", "")
+    " indent & trailing whitespace character
 	call <SID>X("SpecialKey", "4D4D4D", "", "")
     call <SID>X("StatusLine", "c2bfa5", "", "reverse")
     call <SID>X("StatusLineNC", "c2bfa5", "7f7f7f", "reverse")
