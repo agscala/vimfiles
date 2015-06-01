@@ -17,7 +17,7 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 Bundle 'gmarik/vundle'
 
 
@@ -61,6 +61,7 @@ Bundle 'WebAPI.vim'
 
 
 " (required)
+call vundle#end()
 filetype plugin indent on
 
 " ---------- END VUNDLE -------------
