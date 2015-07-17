@@ -16,31 +16,35 @@
 " (required)
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'gmarik/vundle'
 
 
 " GITHUB REPOS:
 Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'fatih/vim-go'
 Bundle 'godlygeek/tabular'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
+Bundle 'klen/python-mode'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'lunaru/vim-less'
+Bundle 'luochen1990/rainbow'
 Bundle 'majutsushi/tagbar'
 Bundle 'MarcWeber/vim-addon-local-vimrc'
 Bundle 'mhinz/vim-startify'
 Bundle 'rosstimson/scala-vim-support'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'tmhedberg/matchit'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-git'
 Bundle 'tsaleh/vim-align'
-Bundle 'tsaleh/vim-matchit'
 Bundle 'tsaleh/vim-supertab'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/csv.vim'
@@ -58,6 +62,15 @@ Bundle 'WebAPI.vim'
 
 " GIT REPOS:
 " Bundle 'git://git.wincent.com/command-t.git'
+
+" Python Mode:
+let g:pymode_folding=0
+let g:pymode_options_colorcolumn=0
+let g:pymode_lint_cwindow=0
+
+
+" Rainbow Parenthesis:
+ let g:rainbow_active = 1
 
 
 " (required)
@@ -130,6 +143,10 @@ set nocompatible
 set noswapfile
 set number
 " set relativenumber " (Don't like too much after trying)
+"
+
+" Preventing 'press enter to continue':
+set shortmess=a
 
 "-- Searching --"
 " nnoremap / /\v
