@@ -1,67 +1,36 @@
-"
-"                        | |
-"  .   , .   . ,---. ,---| |    ,---.
-"   \ /  |   | |   | |   | |    |---'
-"    '   '---' '   ' `---' '--- `---
-"
-" -----------------------------------
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-
-" (required)
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Bundle 'gmarik/vundle'
-
+call plug#begin('~/.vim/plugged')
 
 " GITHUB REPOS:
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'fatih/vim-go'
-Bundle 'godlygeek/tabular'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'lunaru/vim-less'
-Bundle 'luochen1990/rainbow'
-Bundle 'majutsushi/tagbar'
-Bundle 'MarcWeber/vim-addon-local-vimrc'
-Bundle 'mhinz/vim-startify'
-Bundle 'rosstimson/scala-vim-support'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tmhedberg/matchit'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-git'
-Bundle 'tsaleh/vim-align'
-Bundle 'tsaleh/vim-supertab'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/csv.vim'
-Bundle 'vim-scripts/DirDiff.vim'
-Bundle 'vim-scripts/DoxygenToolkit.vim'
-Bundle 'vim-scripts/python.vim'
-Bundle 'wavded/vim-stylus'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'fatih/vim-go'
+Plug 'godlygeek/tabular'
+Plug 'kchmck/vim-coffee-script'
+Plug 'kien/ctrlp.vim'
+Plug 'klen/python-mode'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-powerline'
+Plug 'lunaru/vim-less'
+Plug 'luochen1990/rainbow'
+Plug 'majutsushi/tagbar'
+Plug 'MarcWeber/vim-addon-local-vimrc'
+Plug 'mhinz/vim-startify'
+Plug 'rosstimson/scala-vim-support'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-git'
+Plug 'tsaleh/vim-align'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/csv.vim'
+Plug 'vim-scripts/DirDiff.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vim-scripts/python.vim'
+Plug 'wavded/vim-stylus'
 
-" Bundle 'Valloric/YouCompleteMe.git'
-
-" VIMSCRIPTS REPOS:
-Bundle 'FSwitch'
-Bundle 'Gist.vim'
-Bundle 'WebAPI.vim'
-
-" GIT REPOS:
-" Bundle 'git://git.wincent.com/command-t.git'
 
 " Python Mode:
 let g:pymode_folding=0
@@ -71,13 +40,6 @@ let g:pymode_lint_cwindow=0
 
 " Rainbow Parenthesis:
  let g:rainbow_active = 1
-
-
-" (required)
-call vundle#end()
-filetype plugin indent on
-
-" ---------- END VUNDLE -------------
 
 
 " Print out the syntax groups under the cursor for debugging
