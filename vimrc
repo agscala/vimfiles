@@ -1,74 +1,95 @@
+
 call plug#begin('~/.vim/plugged')
 
-" GITHUB REPOS:
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'fatih/vim-go'
-Plug 'godlygeek/tabular'
 Plug 'kchmck/vim-coffee-script'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'klen/python-mode'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Lokaltog/vim-powerline'
-Plug 'lunaru/vim-less'
 Plug 'luochen1990/rainbow'
-Plug 'majutsushi/tagbar'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'mhinz/vim-startify'
-Plug 'rosstimson/scala-vim-support'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tmhedberg/matchit'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-git'
-Plug 'tsaleh/vim-align'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/csv.vim'
-Plug 'vim-scripts/DirDiff.vim'
-Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'vim-scripts/python.vim'
+Plug 'junegunn/vim-easy-align'
+
+Plug 'rosstimson/scala-vim-support'
 Plug 'wavded/vim-stylus'
+Plug 'fatih/vim-go'
+Plug 'lunaru/vim-less'
 
+call plug#end()
 
-" Python Mode:
-let g:pymode_folding=0
-let g:pymode_options_colorcolumn=0
-let g:pymode_lint_cwindow=0
+" theme
+syntax enable
+set background=dark
+colorscheme agscala
+let &t_SI.="\e[5 q"
+let &t_SR.="\e[4 q"
+let &t_EI.="\e[1 q"
 
+set linespace=1
+
+set backspace=indent,eol,start
+set cursorcolumn
+set cursorline
+set encoding=utf-8
+set hidden
+set laststatus=2
+set lazyredraw
+set nocompatible
+set noswapfile
+set number
+set ruler
+set scrolloff=3
+set shortmess=a
+set showcmd
+set showmode
+set sidescroll=1
+set sidescrolloff=10
+set splitbelow
+set splitright
+set ttyfast
+set visualbell
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildmenu
+set wildmode=list:longest
+
+set list
+set listchars=tab:»\ ,trail:·
+
+" indentation
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set shiftround
+
+" searching
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set nohlsearch
+
+nnoremap j gj
+nnoremap k gk
 
 " Rainbow Parenthesis:
  let g:rainbow_active = 1
 
 
-" Print out the syntax groups under the cursor for debugging
+" Print out the syntax groups under the cursor for debugging colorschemes
 map <F12> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-			\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-			\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-" Testing "
-set encoding=utf-8
-set scrolloff=3
-set sidescroll=1
-set sidescrolloff=10
-" set scrolljump=6
-set showmode
-set showcmd
-set hidden
-set wildmenu
-set wildmode=list:longest
-set visualbell
-set ttyfast
-set ruler
-set backspace=indent,eol,start
-set laststatus=2
-set noswapfile
-set lazyredraw
-set splitbelow
-set splitright
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-"""""""""""
 
 " Reselect visual block after indent
 vnoremap < <gv
@@ -77,81 +98,24 @@ vnoremap > >gv
 " Don't save deleted text
 vnoremap p "_dP
 
+" Remember last cursor position when opening a file
 augroup resCur
 	autocmd!
 	autocmd BufReadPost * call setpos(".", getpos("'\""))
 augroup END
 
-" Shortcut for writing read-only files
-cmap w!! %!sudo tee > /dev/null %
 
-set nocompatible
-set noswapfile
-set number
-" set relativenumber " (Don't like too much after trying)
-
-"-- Default Indenting --"
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set shiftround
 "---------------"
 "
 let mapleader = ","
 
 
-set nocompatible
-set noswapfile
-set number
-" set relativenumber " (Don't like too much after trying)
-"
 
-" Preventing 'press enter to continue':
-set shortmess=a
-
-"-- Searching --"
-" nnoremap / /\v
-" vnoremap / /\v
-set ignorecase
-set smartcase
-" set gdefault "FUCKIN WITH MY SUBSTITUTIN
-set incsearch
-set showmatch
-set nohlsearch
-nnoremap <leader><space> :noh<cr>
-"---------------"
 
 " Show Git Diff in window split when committing
 autocmd FileType gitcommit DiffGitCached | wincmd p
 
 
-set showmatch
-set background=dark
-colorscheme agscala
-" colorscheme solarized
-
-set gfn=Inconsolata\ Medium\ 11
-set linespace=1
-syntax enable
-
-" Highlighting the cursor
-set cursorline
-set cursorcolumn
-set list
-set listchars=tab:»\ ,trail:·
-
-" Use _ as a word separator.
-" NOTE: If this stops working, watch for FileType after
-" set iskeyword-=_
-
-" autocmd CursorHold * setlocal cursorline cursorcolumn
-" autocmd CursorMoved,InsertEnter *
-    " \ if &l:cursorline | setlocal nocursorline nocursorcolumn | endif
-
-" PHP settings.
-let php_sql_query=1
-let php_htmlInStrings=1
 
 " Fold toggling with <Space> if a fold exists at the cursor.
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
@@ -200,16 +164,6 @@ cmap w!! %!sudo tee > /dev/null %
 " Remove GUI from GVIM
 set guioptions=
 
-" Go to last file(s) if invoked without arguments. (ANNOYING CAUSE IT CHANGES
-" CWD TO THE LAST FILES DIR)
-" autocmd VimLeave * nested if (!isdirectory($HOME . "/.vim")) |
-    " \ call mkdir($HOME . "/.vim") |
-    " \ endif |
-    " \ execute "mksession! " . $HOME . "/.vim/Session.vim"
-
-" autocmd VimEnter * nested if argc() == 0 && filereadable($HOME . "/.vim/Session.vim") |
-    " \ execute "source " . $HOME . "/.vim/Session.vim"
-
 " AckGrep.vim
 " let g:ackprg="ack-grep -H --nocolor --nogroup "
 let g:ackprg="ack-grep -H"
@@ -225,37 +179,8 @@ autocmd FileType startify setlocal buftype=
 " EasyMotion.vim settings
 " let g:EasyMotion_leader_key = '<Leader>'
 
-""" TagList.vim settings
-" let Tlist_Ctags_Cmd="ctags-exuberant"
-" let Tlist_Sort_Type="name"
-" let Tlist_Process_File_Always=1
-" let Tlist_WinWidth=50
-" map <F7> <Esc>:TlistToggle<CR>
-" map <F6> :!/usr/bin/ctags-exuberant -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-" " Tags -- add new ones with `ctags -R -f ~/.vim/tags/language.ctags /location/to/tag/from
-" " set tags+=$HOME/.vim/tags/python.ctags
-" " Taglist variables
-" " Display function name in status bar:
-" let g:ctags_statusline=1
-" " Automatically start script
-" let generate_tags=1
-" " Displays taglist results in a vertical window:
-" let Tlist_Use_Horiz_Window=0
-" " Shorter commands to toggle Taglist display
-" nnoremap TT :TlistToggle<CR>
-" " Various Taglist diplay config:
-" let Tlist_Use_Right_Window = 1
-" let Tlist_Compact_Format = 1
-" let Tlist_Exit_OnlyWindow = 1
-" let Tlist_GainFocus_On_ToggleOpen = 1
-" let Tlist_File_Fold_Auto_Close = 1
-
 """ Powerline.vim
 " let g:Powerline_symbols = 'fancy'
-
-""" Tagbar.vim
-map <F7> <Esc>:TagbarToggle<CR>
 
 """ CommandT.vim
 map <F6> <Esc>:CommandT<CR>
@@ -264,32 +189,19 @@ nnoremap <silent> <Leader>b :CommandTBuffer<CR>
 """ Supertab.vim
 " let g:SuperTabDefaultCompletionType = "context"
 
-""" Doxygen
-let g:DoxygenToolkit_briefTag_pre="@details "
-let g:DoxygenToolkit_paramTag_pre="@param "
-let g:DoxygenToolkit_returnTag="@return"
-let g:DoxygenToolkit_authorName="Andrew Scala"
-
-""" MRU (Most Recently Used
+""" MRU (Most Recently Used)
 map <F9> <Esc>:CtrlPMRUFiles<CR>
 map <C-@> <Esc>:CtrlP<CR>
 " map <F9> <Esc>:MRU<CR>
 " let MRU_Max_Menu_Entries = 20
+"
+" Backups
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
 
-""" FSwitch
-autocmd FileType cpp map <F5> <Esc>:FSHere<CR>
-autocmd FileType c map <F5> <Esc>:FSHere<CR>
-
-set completeopt=menuone,longest
-
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#CompleteCpp
-autocmd FileType cpp set omnifunc=omni#cpp#complete#Main
 
 "========= VIM DIFF ========="
 function! s:DiffAllWindows(on) " {{{2
