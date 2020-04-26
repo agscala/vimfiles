@@ -295,6 +295,25 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("DiffChange", "ffffff", "2651b2", "none")
 	call <SID>X("DiffText", "ffffff", "2651b2", "none")
 
+    "ALE Highlighting
+	call <SID>X("SignColumn", "FFCC00", "4C004C", "")
+
+	call <SID>X("ALEVirtualTextError", "ffffff", "2651b2", "none")
+	call <SID>X("ALEVirtualTextWarning", "ffffff", "2651b2", "none")
+	call <SID>X("ALEVirtualTextInfo", "ffffff", "2651b2", "none")
+	call <SID>X("ALEVirtualTextStyleError", "ffffff", "2651b2", "none")
+	call <SID>X("ALEVirtualTextStyleWarning", "ffffff", "2651b2", "none")
+
+	call <SID>X("ALEError", "", "870000", "none")
+	call <SID>X("ALEErrorSign", "ff0000", "4C004C", "bold")
+
+	call <SID>X("ALEInfo", "", "5f5f00", "none")
+	call <SID>X("ALEInfoSign", "d7ff00", "4C004C", "bold")
+
+	call <SID>X("ALEWarning", "", "5f5f00", "none")
+	call <SID>X("ALEWarningSign", "d7ff00", "4C004C", "bold")
+
+
     " delete functions {{{
     delf <SID>X
     delf <SID>rgb
