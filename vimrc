@@ -19,7 +19,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'metakirby5/codi.vim'              " Scratchpad :Codi!
+Plug 'metakirby5/codi.vim'              " Scratchpad :Codi
 Plug 'wellle/targets.vim'               " Improved ca( ciw... etc
 Plug 'mhinz/vim-signify'                " show vcs diff in gutter
 Plug 'farmergreg/vim-lastplace'         " reopens files to last position
@@ -222,9 +222,7 @@ nmap <F8> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$']
 
 " Run the script based on the filetype with <F5>
-autocmd FileType python map <F5> <Esc>:!python %<CR>
-autocmd FileType perl map <F5> <Esc>:!perl %<CR>
-autocmd FileType ruby map <F5> <Esc>:!ruby %<CR>
+map <F5> <Esc>:Codi!!<CR>
 
 " Show trailing whitepace and spaces before a tab:
 autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
@@ -311,8 +309,4 @@ set updatetime=100
 
 
 let g:coc_global_extensions = ['coc-elixir', 'coc-diagnostic']
-
-" :W sudo saves the file 
-" " (useful for handling the permission-denied error)
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
