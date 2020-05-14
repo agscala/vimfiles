@@ -18,7 +18,13 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"
+
+Plug 'metakirby5/codi.vim'              " Scratchpad :Codi!
+Plug 'wellle/targets.vim'               " Improved ca( ciw... etc
+Plug 'mhinz/vim-signify'                " show vcs diff in gutter
+Plug 'farmergreg/vim-lastplace'         "reopens files to last position
+
+
 " Plug 'w0rp/ale'
 " Plug 'prettier/vim-prettier'
 
@@ -162,15 +168,6 @@ nmap ga <Plug>(EasyAlign)
 let g:easy_align_ignore_groups = []
 "let g:easy_align_ignore_groups = ['Comment', 'String']
 
-" Remember last cursor position when opening a file
-augroup resCur
-	autocmd!
-	autocmd BufReadPost * call setpos(".", getpos("'\""))
-augroup END
-
-
-"---------------"
-"
 let mapleader = ","
 
 
@@ -292,3 +289,9 @@ command! -nargs=0 DiffAllOff call <SID>DiffAllWindows(0)
 command! -nargs=* -complete=file DiffThese call <SID>DiffThese(<f-args>)
 "====== END VIM DIFF ========
 
+
+" signify
+set updatetime=100
+
+
+let g:coc_global_extensions = ['coc-elixir', 'coc-diagnostic']
