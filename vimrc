@@ -22,8 +22,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'metakirby5/codi.vim'              " Scratchpad :Codi!
 Plug 'wellle/targets.vim'               " Improved ca( ciw... etc
 Plug 'mhinz/vim-signify'                " show vcs diff in gutter
-Plug 'farmergreg/vim-lastplace'         "reopens files to last position
-
+Plug 'farmergreg/vim-lastplace'         " reopens files to last position
+Plug 'ConradIrwin/vim-bracketed-paste'  " auto :set paste
 
 " Plug 'w0rp/ale'
 " Plug 'prettier/vim-prettier'
@@ -41,17 +41,19 @@ let &t_SR.="\e[4 q"
 let &t_EI.="\e[1 q"
 
 set linespace=1
+set cmdheight=1
 
 set signcolumn=yes
 set backspace=indent,eol,start
 set cursorcolumn
 set cursorline
 set encoding=utf-8
+set fileformats=unix,dos,mac
 set hidden
 set laststatus=2
-" set lazyredraw
+set lazyredraw
+set magic
 set nocompatible
-set noswapfile
 set number
 set ruler
 set scrolloff=3
@@ -63,19 +65,27 @@ set sidescrolloff=10
 set splitbelow
 set splitright
 set ttyfast
-set visualbell
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 set wildmenu
 set wildmode=list:longest
 
 set list
 set listchars=tab:»\ ,trail:·
 
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
 " " indentation
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set autoindent
+set smartindent
 set expandtab
+set smarttab
 set shiftround
 filetype indent plugin on
 syntax on
@@ -89,6 +99,9 @@ set nohlsearch
 
 nnoremap j gj
 nnoremap k gk
+"reindent text after p
+nnoremap p p=`]
+
 
 " CoC - Conquer of Completion
 inoremap <silent><expr> <TAB>
@@ -174,7 +187,7 @@ let mapleader = ","
 
 
 " Show Git Diff in window split when committing
-autocmd FileType gitcommit DiffGitCached | wincmd p | :resize 15
+autocmd FileType gitcommit silent DiffGitCached | wincmd p | :resize 15
 
 
 
@@ -254,11 +267,14 @@ map <C-@> <Esc>:CtrlP<CR>
 " let MRU_Max_Menu_Entries = 20
 "
 " Backups
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" set backup
+" set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" set backupskip=/tmp/*,/private/tmp/*
+" set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" set writebackup
+set nobackup
 set writebackup
+set noswapfile
 
 
 "========= VIM DIFF ========="
@@ -295,3 +311,8 @@ set updatetime=100
 
 
 let g:coc_global_extensions = ['coc-elixir', 'coc-diagnostic']
+
+" :W sudo saves the file 
+" " (useful for handling the permission-denied error)
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
