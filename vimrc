@@ -274,6 +274,8 @@ set nobackup
 set writebackup
 set noswapfile
 
+nnoremap q: <nop>
+nnoremap Q <nop>
 
 "========= VIM DIFF ========="
 function! s:DiffAllWindows(on) " {{{2

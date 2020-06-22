@@ -261,11 +261,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("LineNr", "FFCC00", "4C004C", "")
     call <SID>X("ModeMsg", "7AFFFF", "FF0000", "bold")
     call <SID>X("MoreMsg", "2e8b57", "", "")
-	call <SID>X("NonText", "3D3D3D", "000000", "bold")
     call <SID>X("Question", "00ff7f", "", "")
     call <SID>X("Search", "f5deb3", "cd853f", "")
     " indent & trailing whitespace character
 	call <SID>X("SpecialKey", "4D4D4D", "", "")
+    call <SID>X("Whitespace", "4D4D4D", "", "")
+    call <SID>X("NonText", "3D3D3D", "000000", "bold")
+
     call <SID>X("StatusLine", "c2bfa5", "", "reverse")
     call <SID>X("StatusLineNC", "c2bfa5", "7f7f7f", "reverse")
     call <SID>X("Title", "cd5c5c", "", "")
@@ -276,6 +278,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "Menu
     "Scrollbar
     "Tooltip
+    call <SID>X("PmenuSel", "EEEEEE", "333333", "bold")
+    call <SID>X("Pmenu", "DDDDDD", "333333", "")
+    call <SID>X("PmenuSbar", "", "777777", "")
+    call <SID>X("PmenuThumb", "", "444444", "")
 
     " syntax highlighting groups
 	call <SID>X("Comment", "646B6E", "", "")
