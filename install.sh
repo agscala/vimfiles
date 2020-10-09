@@ -1,16 +1,7 @@
 cd ~/.vim
 
-git submodule init
-git submodule update
+vim +'PlugInstall --sync' +qa
+mkdir -p ~/.config/nvim
 
-echo "Updating plug-ins..."
-
-vim +BundleInstall +qall
-
-echo "Installing vimfiles..."
-
-cp ~/.vimrc ~/.vimrc.old > /dev/null
-rm ~/.vimrc > /dev/null
-
-ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 
